@@ -6,6 +6,9 @@ const controller = require('../controller/index');
 router.route('/update')
 .get(controller.temperature.get);
 
+router.route('/dump')
+.get(controller.data.get);
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });

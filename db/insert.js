@@ -7,7 +7,6 @@ const connection = mysql.createConnection({
   database : 'test',
   multipleStatements: true,
 });
-connection.connect();
 module.exports = {
   insertTemperature: (temperature) => {
     const insertQuery = `
