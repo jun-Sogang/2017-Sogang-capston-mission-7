@@ -7,9 +7,9 @@
 
       function drawChart() {
         var data = google.visualization.DataTable();
-        <HEADER>
+        data.addColum('number', 'temp','t');
         data.addRows([
-          <DATA>
+          [1,2,3]
         ])
         var options = {
           title: 'Temperature at Magic club',
