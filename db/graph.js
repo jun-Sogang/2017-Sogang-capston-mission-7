@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
   multipleStatements: true,
 });
 module.exprots = {
-  graph : () => {
+  showGraph : () => {
     const query = 'select * from sensors ';
     return new Promise((resolve, reject) => {
       connection.query(query, (err, res) => {

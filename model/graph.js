@@ -2,6 +2,7 @@ const graph = require('../db/graph');
 
 module.exports = {
   get: (obj) => {
-    return graph.graph();
+    console.log(graph);
+    return graph.showGraph();
   }
 };
