@@ -2,9 +2,9 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host : 'localhost',
   user : 'root',
-  port : 3307,
+  port : 3306,
   password : 'dkswm1',
-  database : 'test',
+  database : 'data',
   multipleStatements: true,
 });
 module.exprots = {
@@ -15,7 +15,7 @@ module.exprots = {
         if (err) throw err;
         console.log('graphing query ok');
         return resolve(res);
-	});
+	     });
 	});
   },
 }
