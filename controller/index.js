@@ -42,7 +42,7 @@ module.exports = {
     get: (req, res) => (graph.get())
     .then((result) => {
       console.log('got app.get(graph)');
-      var html = fs.readFile('graph1.html', (err, html) => {
+      var html = fs.readFile('./graph1.html', (err, html) => {
         console.log('html', html);
         html = " " + html;
         console.log('read file');
