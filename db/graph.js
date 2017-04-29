@@ -9,7 +9,9 @@ const connection = mysql.createConnection({
 });
 module.exports = {
   showGraph : () => {
-    const query = 'select * from sensors ';
+    const query = `
+    select * from sensors where time > date_sub(now(), INTERVAL 1 DAY)
+    `;
     return new Promise((resolve, reject) => {
       connection.query(query, (err, res) => {
         if (err) throw reject(err);
