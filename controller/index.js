@@ -42,7 +42,7 @@ module.exports = {
     get: (req, res) => (graph.get())
     .then((result) => {
       console.log('got app.get(graph)');
-      var html = fs.readFile('../graph1.html', (err, html) => {
+      var html = fs.readFile('./graph1.html', (err, html) => {
         html = " " + html;
         console.log('read file');
         console.log(result);
@@ -52,7 +52,7 @@ module.exports = {
           data += comma + "[new Date(2017,04-1,"+ result[i].id +",00,38),"+ result[i].value +"]";
           comma = ',';
         }
-        console.log(data);
+        console.log(html);
         var header = "data.addColumn('date', 'Date/Time');"
         header += "data.addColumn('number', 'Temp');"
         html = html.replace("<%HEADER%>", header);
