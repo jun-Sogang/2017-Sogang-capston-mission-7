@@ -55,8 +55,8 @@ module.exports = {
         console.log(html);
         var header = "data.addColumn('date', 'Date/Time');"
         header += "data.addColumn('number', 'Temp');"
-        html = html.replace("<%HEADER%>", header);
-        html = html.replace("<%DATA%>", data);
+        html = html.replace("<HEADER>", header);
+        html = html.replace("<DATA>", data);
         res.writeHeader(200, {"Content-Type": "text/html"});
         console.log(html);
         res.write(html);
