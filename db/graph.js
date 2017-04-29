@@ -12,7 +12,7 @@ module.exports = {
     const query = 'select * from sensors ';
     return new Promise((resolve, reject) => {
       connection.query(query, (err, res) => {
-        if (err) throw err;
+        if (err) throw reject(err);
         console.log('graphing query ok');
         return resolve(res);
 	     });
