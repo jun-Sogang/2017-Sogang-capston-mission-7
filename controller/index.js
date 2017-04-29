@@ -45,7 +45,7 @@ module.exports = {
       var html = fs.readFile('../graph1.html', (err, html) => {
         html = " " + html;
         console.log('read file');
-
+        console.log(result);
         var data = "";
         var comma = "";
         for (var i = 0; i < result.length; i += 1) {
