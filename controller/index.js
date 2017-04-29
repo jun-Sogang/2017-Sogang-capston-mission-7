@@ -53,7 +53,7 @@ module.exports = {
           comma = ',';
         }
         console.log(html);
-        var header = "'time', temperature";
+        var header = "'time', 'temperature'";
         html = html.replace("<HEADER>", header);
         html = html.replace("<DATA>", data);
         res.writeHeader(200, {"Content-Type": "text/html"});
