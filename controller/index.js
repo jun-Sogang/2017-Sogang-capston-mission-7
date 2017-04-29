@@ -49,7 +49,7 @@ module.exports = {
         var data = "";
         var comma = "";
         for (var i = 0; i < result.length; i += 1) {
-          data += `${comma}[${result[i].id}, result[i].value]`;
+          data += `${comma}['${result[i].id}', result[i].value]`;
           comma = ',';
         }
         console.log(html);
