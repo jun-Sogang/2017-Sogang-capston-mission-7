@@ -58,6 +58,7 @@ module.exports = {
         html = html.replace("<%HEADER%>", header);
         html = html.replace("<%DATA%>", data);
         res.writeHeader(200, {"Content-Type": "text/html"});
+        console.log(html);
         res.write(html);
         res.end();
       });
