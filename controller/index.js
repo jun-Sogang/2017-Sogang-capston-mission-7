@@ -45,13 +45,14 @@ module.exports = {
       var html = fs.readFile('../graph1.html', (err, html) => {
         html = " " + html;
         console.log('read file');
-        var res = JSON.parse(result);
+        console.log(result);
         var data = "";
         var comma = "";
         for (var i = 0; i < result.length; i += 1) {
-          data += comma + "[new Date(2017,04-1,"+ res[i].id +",00,38),"+ res[i].value +"]";
+          data += comma + "[new Date(2017,04-1,"+ result[i].id +",00,38),"+ result[i].value +"]";
           comma = ',';
         }
+        console.log(data);
         var header = "data.addColumn('date', 'Date/Time');"
         header += "data.addColumn('number', 'Temp');"
         html = html.replace("<%HEADER%>", header);
