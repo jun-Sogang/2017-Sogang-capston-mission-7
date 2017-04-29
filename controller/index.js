@@ -57,10 +57,11 @@ module.exports = {
         header += "data.addColumn('number', 'Temp');"
         html = html.replace("<%HEADER%>", header);
         html = html.replace("<%DATA%>", data);
+        res.writeHeader(200, {"Content-Type": "text/html"});
+        res.write(html);
+        res.end();
       });
-      res.writeHeader(200, {"Content-Type": "text/html"});
-      res.write(html);
-      res.end();
+
     })
   },
 }
