@@ -42,11 +42,10 @@ module.exports = {
     get: (req, res) => (graph.get())
     .then((result) => {
       console.log('got app.get(graph)');
-      var html = fs.readFile('graph.html', (err, html) => {
+      fs.readFile('graph.html', (err, html) => {
         console.log('html', html);
         html = " " + html;
         console.log('read file');
-        console.log(result);
         var data = "";
         var comma = "";
         for (var i = 0; i < result.length; i += 1) {
