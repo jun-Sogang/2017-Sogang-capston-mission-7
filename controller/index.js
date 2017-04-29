@@ -1,6 +1,7 @@
 const fs = require('fs');
 const temperature = require('../model/insert');
 const selectData = require('../model/select');
+const graph = require('../model/graph');
 
 module.exports = {
   temperature: {
@@ -35,6 +36,29 @@ module.exports = {
     html += "</table>";
     html += "</body></html>";
     res.send(html);
+    })
+  },
+  graph: {
+    get: (req, res) => (graph.get())
+    .then((result) => {
+      var html = fs.readFile('../graph1.html', (err, html) => {
+        html = " " + html;
+        console.log('read file');
+
+        var data = "";
+        var comma = "";
+        for (var i = 0; i < result.length; i += 1) {
+          data += comma + "[new Date(2017,04-1,"+ result[i].id +",00,38),"+ result[i].value +"]";
+          comma = ',';
+        }
+        var header = "data.addColumn('date', 'Date/Time');"
+        header += "data.addColumn('number', 'Temp');"
+        html = html.replace("<%HEADER%>", header);
+        html = html.replace("<%DATA%>", data);
+      });
+      res.writeHeader(200, {"Content-Type": "text/html"});
+      res.write(html);
+      res.end();
     })
   },
 }

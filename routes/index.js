@@ -9,6 +9,9 @@ router.route('/update')
 router.route('/dump')
 .get(controller.data.get);
 
+router.route('/graph')
+.get(controller.graph.get);
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
