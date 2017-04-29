@@ -49,12 +49,11 @@ module.exports = {
         var data = "";
         var comma = "";
         for (var i = 0; i < result.length; i += 1) {
-          data += comma + "[new Date(2017,04-1,"+ result[i].id +",00,38),"+ result[i].value +"]";
+          data += `${comma}[${result[i].id}, result[i].value]`;
           comma = ',';
         }
         console.log(html);
-        var header = "data.addColumn('date', 'Date/Time');"
-        header += "data.addColumn('number', 'Temp');"
+        var header = "'time', temperature";
         html = html.replace("<HEADER>", header);
         html = html.replace("<DATA>", data);
         res.writeHeader(200, {"Content-Type": "text/html"});
