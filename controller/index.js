@@ -30,7 +30,7 @@ module.exports = {
     html += "<tr><td>Seq#<td>Time Stamp<td>Temperature";
     for (var i=0; i< result.length; i++) {
       console.log(result[i].id);
-       html += `<tr><td>Seq${i}<td>${result[i].time}<td>${result[i].value}`;
+       html += `<tr><td>Seq${i}<td>${result[result.length-1-i].time}<td>${result[result.length-1-i].value}`;
     }
     html += "</table>";
     html += "</body></html>";
