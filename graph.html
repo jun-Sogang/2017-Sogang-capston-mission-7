@@ -6,11 +6,11 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          [<HEADER>],
-          [<DATA>]
-        ]);
-
+        var data = google.visualization.DataTable();
+        <HEADER>
+        data.addRows([
+          <DATA>
+        ])
         var options = {
           title: 'Temperature at Magic club',
           curveType: 'function',
